@@ -1,57 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Alejandro Ferreira Portfolio</title>
+    <title>Alejandro Ferreira | Portfolio</title>
+
     <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #000000;
+            --navbar-bg: #8B0000;
+            --navbar-text: gold;
+            --section-bg: #ffffff;
+            --link-color: #8B0000;
+            --footer-color: #777;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            margin: 40px;
             line-height: 1.6;
-            background-color: #f7f7f7;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
-        h1, h2 {
-            color: #333;
+
+        /* Top Navigation Bar */
+        .navbar {
+            background-color: var(--navbar-bg);
+            color: var(--navbar-text);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        a {
-            color: #0066cc;
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .nav-links a {
+            color: var(--navbar-text);
             text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
         }
-        a:hover {
+
+        .nav-links a:hover {
             text-decoration: underline;
         }
+
+        #theme-toggle {
+            margin-left: 20px;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--section-bg);
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        /* About Section Layout */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-container img {
+            width: 220px;        
+            height: auto;        
+            border-radius: 8px;  
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
         ul {
-            list-style: none;
-            padding-left: 0;
+            padding-left: 20px;
         }
-        li {
-            margin-bottom: 10px;
+
+        ul li {
+            margin-bottom: 15px;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        ul li a {
+            text-decoration: none;
+            color: var(--link-color);
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: var(--footer-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-container img {
+                width: 180px;
+                height: auto;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Hello, I’m Alejandro Ferreira</h1>
-        <p><strong>Software developer building robust, testable, and real-world applications across multiple languages and platforms.</strong></p>
 
-        <h2>Top Projects</h2>
-        <ul>
-            <li><a href="https://github.com/AlejandroJFerreira/project1">Text-To-Speech System</a></li>
-            <li><a href="https://github.com/AlejandroJFerreira/project2">Chase Terminal Game</a></li>
-            <li><a href="https://github.com/AlejandroJFerreira/project3">FlowSynx Open Source Contribution</a></li>
-            <li><a href="https://github.com/AlejandroJFerreira/project4">AED Simulator</a></li>
-        </ul>
-
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:alejandro.j.ferreira@outlook.com">alejandro.j.ferreira@outlook.com</a></p>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Alejandro Ferreira</h1>
+        <div class="nav-links">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#links">Links</a>
+            <button id="theme-toggle">🌙</button>
+        </div>
     </div>
+
+    <!-- About Section -->
+    <div class="section" id="about">
+        <div class="about-container">
+            <img src="Picture_Ale.jpg" alt="Alejandro Ferreira">
+
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I am a software developer and recent Computer Science graduate
+                    from Carleton University. I enjoy tackling challenging problems, 
+                    building interactive systems, and seeing projects through 
+                    from concept to completion.
+                </p>
+                <p>
+                    I am proficient in several languages, including C/C++, Python, 
+                    Java, and JavaScript, and have hands-on experience with the 
+                    Linux file system and kernel. Additionally, I have worked on 
+                    multiple embedded software projects for RTOS and have familiarity
+                    with RL agents and algorithms.
+                </p>
+                <p>
+                    I enjoy collaborating with new people and expanding my horizons. 
+                    On every project, I strive to deliver my best work while continually 
+                    honing my skills. I know how to ask the right questions, and my 
+                    passion and strong communication skills make me a valuable asset 
+                    to any team I work with.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong><a href="https://github.com/AlejandroJFerreira/CurlingGame" target="_blank">Multiplayer Curling Game</a></strong><br>
+                Real-time multiplayer game built with Node.js and Socket.IO.
+            </li>
+            <li>
+                <strong><a href="https://github.com/AlejandroJFerreira/Tales-Of-Wing-RPG" target="_blank">Tales of Wing RPG</a></strong><br>
+                2D turn-based RPG with custom battle mechanics and dynamic quests.
+            </li>
+            <li>
+                <strong><a href="https://github.com/AlejandroJFerreira/Text-To-Speech-QNX-Whisper" target="_blank">Text-to-Speech on QNX</a></strong><br>
+                Ported Whisper.cpp to QNX 7.1 on ARM for embedded transcription testing.
+            </li>
+            <li>
+                <strong><a href="https://github.com/AlejandroJFerreira/AED-Simulator" target="_blank">AED Simulator</a></strong><br>
+                C++/Qt GUI simulator following real-world AED specifications.
+            </li>
+        </ul>
+    </div>
+
+    <!-- Links Section -->
+    <div class="section" id="links">
+        <h2>Links</h2>
+        <p><a href="https://github.com/AlejandroJFerreira" target="_blank">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/alejandro-ferreira/" target="_blank">LinkedIn</a></p>
+        <p>Email: alejandro.j.ferreira@outlook.com</p>
+    </div>
+
+    <footer>
+        © 2026 Alejandro Ferreira
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        let darkMode = false;
+
+        toggleButton.addEventListener('click', () => {
+            darkMode = !darkMode;
+            if(darkMode){
+                document.documentElement.style.setProperty('--bg-color', '#1e1e1e');
+                document.documentElement.style.setProperty('--text-color', '#f0f0f0');
+                document.documentElement.style.setProperty('--navbar-bg', '#3b0000');
+                document.documentElement.style.setProperty('--navbar-text', '#FFD700');
+                document.documentElement.style.setProperty('--section-bg', '#2c2c2c');
+                document.documentElement.style.setProperty('--link-color', '#FF6347');
+                document.documentElement.style.setProperty('--footer-color', '#aaa');
+                toggleButton.textContent = '☀️';
+            } else {
+                document.documentElement.style.setProperty('--bg-color', '#f4f4f4');
+                document.documentElement.style.setProperty('--text-color', '#000000');
+                document.documentElement.style.setProperty('--navbar-bg', '#8B0000');
+                document.documentElement.style.setProperty('--navbar-text', 'gold');
+                document.documentElement.style.setProperty('--section-bg', '#ffffff');
+                document.documentElement.style.setProperty('--link-color', '#8B0000');
+                document.documentElement.style.setProperty('--footer-color', '#777');
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+
 </body>
 </html>
